@@ -22,17 +22,13 @@ function operate(num1, opp, num2) {
 
     switch (opp) {
         case '+':
-            console.log(add(num1, num2));
-            break;
+            return add(num1, num2);
         case '-':
-            console.log(subtract(num1, num2));
-            break;
+            return subtract(num1, num2);
         case 'x':
-            console.log(multiply(num1, num2));
-            break;
+            return multiply(num1, num2);
         case '/':
-            console.log(divide(num1, num2));
-            break;
+            return divide(num1, num2);
         default:
             console.log('not a correct operator!');
     }
@@ -73,6 +69,6 @@ equals.addEventListener('click', () => {
     console.log(`Num 2 = ${num2}`);
     display.textContent = '';
 
-    console.log(operate(num1, operator, num2));
+    display.textContent = operate(num1, operator, num2);
 })
 
