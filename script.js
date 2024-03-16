@@ -38,3 +38,13 @@ function operate(num1, opp, num2) {
     }
 
 }
+
+let display = document.querySelector('.selection');
+let displayButtons = document.querySelectorAll('.will-display');
+
+for (let btn of displayButtons) {
+    btn.addEventListener('click', (e) => {
+        display.textContent += btn.textContent;
+    })
+}
+
