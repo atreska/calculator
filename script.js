@@ -72,3 +72,10 @@ equals.addEventListener('click', () => {
     display.textContent = operate(num1, operator, num2);
 })
 
+let clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+    display.textContent = '';
+    num1 = 0;
+    num2 = 0;
+})
+
