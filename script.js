@@ -27,7 +27,7 @@ function operate(num1, opp, num2) {
         case '-':
             console.log(subtract(num1, num2));
             break;
-        case '*':
+        case 'x':
             console.log(multiply(num1, num2));
             break;
         case '/':
@@ -41,10 +41,38 @@ function operate(num1, opp, num2) {
 
 let display = document.querySelector('.selection');
 let displayButtons = document.querySelectorAll('.will-display');
+let displayValue = '';
 
 for (let btn of displayButtons) {
     btn.addEventListener('click', (e) => {
         display.textContent += btn.textContent;
+        displayValue = display.textContent;
     })
 }
+
+let num1 = 0;
+let num2 = 0;
+
+
+let operators = document.querySelectorAll('.operator');
+
+for (let number1 of operators) {
+    number1.addEventListener('click', () => {
+        num1 = parseInt(display.textContent);
+        console.log(`Num 1 = ${num1}`);
+        operator = number1.textContent;
+        console.log(operator);
+        display.textContent = '';
+    })
+}
+
+let equals = document.querySelector('.equals');
+
+equals.addEventListener('click', () => {
+    num2 = parseInt(display.textContent)
+    console.log(`Num 2 = ${num2}`);
+    display.textContent = '';
+
+    console.log(operate(num1, operator, num2));
+})
 
