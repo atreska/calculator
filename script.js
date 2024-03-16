@@ -37,12 +37,15 @@ function operate(num1, opp, num2) {
 
 let display = document.querySelector('.selection');
 let displayButtons = document.querySelectorAll('.will-display');
-let displayValue = '';
+display.textContent = '0'
 
 for (let btn of displayButtons) {
     btn.addEventListener('click', (e) => {
-        display.textContent += btn.textContent;
-        displayValue = display.textContent;
+        if (display.textContent === '0') {
+            display.textContent = btn.textContent;
+        } else
+            display.textContent += btn.textContent;
+
     })
 }
 
@@ -74,7 +77,7 @@ equals.addEventListener('click', () => {
 
 let clear = document.querySelector('.clear');
 clear.addEventListener('click', () => {
-    display.textContent = '';
+    display.textContent = '0';
     num1 = 0;
     num2 = 0;
 })
