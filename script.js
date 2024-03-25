@@ -29,6 +29,12 @@ function appendDecimal(dec) {
         display.textContent += dec.textContent;
 }
 
+function clearArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = '';
+    }
+}
+
 
 function operate(num1, opp, num2) {
 
@@ -46,6 +52,8 @@ function operate(num1, opp, num2) {
     }
 
 }
+
+let operationValues = [1, 2, 3];
 
 let display = document.querySelector(".selection");
 
