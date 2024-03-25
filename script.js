@@ -14,6 +14,15 @@ function divide(num1, num2) {
     return num1 / num2;
 }
 
+function clearDisplay() {
+    display.textContent = '';
+}
+
+function appendNumber(btnValue) {
+    display.textContent += btnValue;
+}
+
+
 function operate(num1, opp, num2) {
 
     switch (opp) {
@@ -31,13 +40,15 @@ function operate(num1, opp, num2) {
 
 }
 
+let display = document.querySelector(".selection");
 
-function clearDisplay() {
-    display.textContent = '';
+
+let numButtons = document.querySelectorAll('.num');
+
+for (let btn of numButtons) {
+    btn.addEventListener('click', (e) => {
+        appendNumber(e.target.textContent);
+    })
 }
-
-
-
-
 
 
