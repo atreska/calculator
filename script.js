@@ -22,6 +22,13 @@ function appendNumber(btnValue) {
     display.textContent += btnValue;
 }
 
+function appendDecimal(dec) {
+    if (display.textContent.includes('.')) {
+        return;
+    } else
+        display.textContent += dec.textContent;
+}
+
 
 function operate(num1, opp, num2) {
 
@@ -42,13 +49,17 @@ function operate(num1, opp, num2) {
 
 let display = document.querySelector(".selection");
 
-
 let numButtons = document.querySelectorAll('.num');
+let decimal = document.querySelector('.decimal');
 
 for (let btn of numButtons) {
     btn.addEventListener('click', (e) => {
         appendNumber(e.target.textContent);
     })
 }
+
+decimal.addEventListener('click', (e) => {
+    appendDecimal(decimal);
+})
 
 
