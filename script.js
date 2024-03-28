@@ -101,17 +101,18 @@ clear.addEventListener('click', (e) => {
 let currentValue = undefined;
 
 let operator = document.querySelectorAll('.operator');
+
 for (let btn of operator) {
     btn.addEventListener('click', (e) => {
         if (checkArray(operationValues)) {
             console.log(operationValues);
             if (operationValues[0] === '') {
-                operationValues[0] = parseInt(display.textContent);
+                operationValues[0] = parseFloat(display.textContent);
                 display.textContent = '';
             } else if (operationValues[1] === '') {
                 operationValues[1] = e.target.textContent;
             } else {
-                operationValues[2] = parseInt(display.textContent);
+                operationValues[2] = parseFloat(display.textContent);
                 display.textContent = operate(operationValues[0], operationValues[1], operationValues[2]);
                 currentValue = operate(operationValues[0], operationValues[1], operationValues[2]);
                 clearArray(operationValues);
@@ -134,7 +135,7 @@ equals.addEventListener('click', (e) => {
         } else if (operationValues[1] === '') {
             return;
         } else if (operationValues[2] === '') {
-            operationValues[2] = parseInt(display.textContent);
+            operationValues[2] = parseFloat(display.textContent);
             display.textContent = operate(operationValues[0], operationValues[1], operationValues[2]);
             currentValue = operate(operationValues[0], operationValues[1], operationValues[2]);
             clearArray(operationValues);
