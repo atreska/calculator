@@ -27,6 +27,16 @@ function clearEverything() {
     currentValue = undefined;
 }
 
+function deleteNumber() {
+    if (display.textContent == currentValue) {
+        return
+    }
+
+    let number = display.textContent;
+    let deletedNumber = number.slice(0, -1)
+    display.textContent = deletedNumber;
+}
+
 function appendNumber(btnValue) {
     display.textContent += btnValue;
 }
@@ -97,6 +107,11 @@ clear.addEventListener('click', (e) => {
     clearEverything();
 
 });
+
+let deleteANumber = document.querySelector('.delete');
+deleteANumber.addEventListener('click', (e) => {
+    deleteNumber();
+})
 
 let currentValue = undefined;
 
