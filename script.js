@@ -98,17 +98,19 @@ let operationValues = ['', '', ''];
 
 
 let display = document.querySelector(".selection");
+//show 0 as default display
 defaultZero();
 
 //on and off switch to clear the current total the first time around.
 let clearTotal = 0;
+let checkDisplayLength = 0;
 
 let numButtons = document.querySelectorAll('.num');
 for (let btn of numButtons) {
     btn.addEventListener('click', (e) => {
-        // if (display.textContent.length >= 9) {
-        //     return;
-        // }
+        if (checkDisplayLength >= 9) {
+            return;
+        }
 
         if (display.textContent == 0 && display.textContent.length <= 1) {
             display.textContent = '';
@@ -121,6 +123,7 @@ for (let btn of numButtons) {
 
         clearDisplay();
         appendNumber(e.target.textContent);
+        checkDisplayLength++;
     })
 }
 
@@ -181,7 +184,7 @@ for (let btn of operator) {
 
             }
             operationValues[1] = e.target.textContent;
-
+            checkDisplayLength = 0;
             console.log(operationValues);
         }
     })
@@ -212,5 +215,7 @@ equals.addEventListener('click', (e) => {
         } else
             return
     }
+
+    checkDisplayLength = 0;
 
 })
