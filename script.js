@@ -31,14 +31,6 @@ function defaultZero() {
     display.textContent = '0';
 }
 
-function clearDefaultZero(arr) {
-    if (operationValues[0] == 0 && operationValues[1] == 0 && operationValues[2] == 0) {
-        return true;
-    }
-
-    return false;
-}
-
 function deleteNumber() {
     if (display.textContent == currentValue) {
         return
@@ -138,6 +130,7 @@ let clear = document.querySelector('.clear');
 clear.addEventListener('click', (e) => {
     clearEverything();
     display.textContent = 0;
+    checkDisplayLength = 0;
 });
 
 let deleteANumber = document.querySelector('.delete');
@@ -164,7 +157,6 @@ for (let btn of operator) {
             console.log(operationValues);
             if (operationValues[0] === '') {
                 operationValues[0] = parseFloat(display.textContent);
-                // display.textContent = '';
                 clearTotal = 1;
             } else if (operationValues[1] === '') {
                 operationValues[1] = e.target.textContent;
