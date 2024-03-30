@@ -139,6 +139,14 @@ clear.addEventListener('click', (e) => {
 
 let deleteANumber = document.querySelector('.delete');
 deleteANumber.addEventListener('click', (e) => {
+    if (display.textContent === 'Error') {
+        return;
+    } else if (display.textContent == 0 && display.textContent.length <= 1) {
+        return;
+    } else if (display.textContent != 0 && display.textContent.length <= 1) {
+        display.textContent = 0;
+        return;
+    }
     deleteNumber();
 })
 
