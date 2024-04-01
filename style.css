@@ -33,7 +33,6 @@ html {
     display: flex;
     justify-content: flex-end;
     padding: 2em 0;
-    /* background-color: rgb(212, 212, 212); */
     color: black;
     background-color: lightgray;
     padding-right: .3em;
