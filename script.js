@@ -81,7 +81,7 @@ function operate(num1, opp, num2) {
         case '/':
             return divide(num1, num2);
         default:
-            console.log('not a correct operator!');
+            alert('not a correct operator!');
     }
 
 }
@@ -122,7 +122,6 @@ for (let btn of numButtons) {
 let decimal = document.querySelector('.decimal');
 decimal.addEventListener('click', (e) => {
     appendDecimal(decimal);
-    console.log(display.textContent);
 
 })
 
@@ -154,7 +153,6 @@ for (let btn of operator) {
     btn.addEventListener('click', (e) => {
 
         if (checkArray(operationValues)) {
-            console.log(operationValues);
             if (operationValues[0] === '') {
                 operationValues[0] = parseFloat(display.textContent);
                 clearTotal = 1;
@@ -172,12 +170,10 @@ for (let btn of operator) {
                 currentValue = operate(operationValues[0], operationValues[1], operationValues[2]);
                 clearArray(operationValues);
                 operationValues[0] = currentValue;
-                console.log(operationValues);
 
             }
             operationValues[1] = e.target.textContent;
             checkDisplayLength = 0;
-            console.log(operationValues);
         }
     })
 }
@@ -203,7 +199,6 @@ equals.addEventListener('click', (e) => {
             currentValue = operate(operationValues[0], operationValues[1], operationValues[2]);
             clearArray(operationValues);
             operationValues[0] = currentValue;
-            console.log(operationValues);
         } else
             return
     }
